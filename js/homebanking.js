@@ -1,7 +1,9 @@
 //Declaración de variables
+var cantidadDeDinero = parseInt();
 var nombreUsuario = "Dieguito";
 var saldoCuenta = 100000;
 var limiteExtraccion = 50000;
+
 
 //Ejecución de las funciones que actualizan los valores de las variables en el HTML.
 window.onload = function() {
@@ -9,7 +11,6 @@ window.onload = function() {
     actualizarSaldoEnPantalla();
     actualizarLimiteEnPantalla();
 }
-
 
 //Funciones que tenes que completar
 function cambiarLimiteDeExtraccion() {
@@ -20,8 +21,8 @@ function extraerDinero() {
 
 }
 
-function depositarDinero() {
-
+function depositarDinero(cantidadDeDinero) {
+    cantidadDeDinero + saldoCuenta;
 }
 
 function pagarServicio() {
