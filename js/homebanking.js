@@ -4,6 +4,13 @@ var nombreUsuario = "Dieguito";
 var saldoCuenta = 100000;
 var limiteExtraccion = 50000;
 
+function sumarDineroALaCuenta (cantidadDeDinero) {
+    cantidadDeDinero + saldoCuenta;
+}
+
+function restarDineroALaCuenta (cantidadDeDinero) {
+    saldoCuenta - cantidadDeDinero;
+}
 
 //Ejecución de las funciones que actualizan los valores de las variables en el HTML.
 window.onload = function() {
@@ -17,12 +24,12 @@ function cambiarLimiteDeExtraccion() {
 
 }
 
-function extraerDinero() {
-
+function extraerDinero(cantidadDeDinero) {
+    
 }
 
 function depositarDinero(cantidadDeDinero) {
-    cantidadDeDinero + saldoCuenta;
+    prompt("Ingrese el monto a depositar")
 }
 
 function pagarServicio() {
