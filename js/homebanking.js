@@ -29,7 +29,14 @@ function extraerDinero(cantidadDeDinero) {
 }
 
 function depositarDinero(cantidadDeDinero) {
-    prompt("Ingrese el monto a depositar")
+    var montoIngresadoString = prompt("Ingrese el monto a depositar");
+    montoIngresadoNumber = parseInt(montoIngresadoString);
+    var saldoAnterior = saldoCuenta;
+    suma(montoIngresadoNumber);
+    actualizarSaldoEnPantalla()
+    alert("Depositaste: $  + montoIngresadoNumber\nSaldo Anterior: $ + saldoAnterior \nSaldo Actual: $ + saldoCuenta"
+            );
+
 }
 
 function pagarServicio() {
