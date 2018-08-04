@@ -1,15 +1,15 @@
 //Declaración de variables
 var cantidadDeDinero = parseInt();
-var nombreUsuario = "Dieguito";
+var nombreUsuario = "Tony Stark";
 var saldoCuenta = 100000;
 var limiteExtraccion = 50000;
 
-function sumarDineroALaCuenta (cantidadDeDinero) {
-    cantidadDeDinero + saldoCuenta;
+function suma (cantidad) {
+    saldoCuenta = cantidad + saldoCuenta;
 }
 
-function restarDineroALaCuenta (cantidadDeDinero) {
-    saldoCuenta - cantidadDeDinero;
+function resta (cantidadDeDinero) {
+    saldoCuenta = saldoCuenta - cantidadDeDinero;
 }
 
 //Ejecución de las funciones que actualizan los valores de las variables en el HTML.
