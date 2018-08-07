@@ -1,5 +1,5 @@
 //Declaración de variables
-var cantidadDeDinero = parseInt();
+// var cantidadDeDinero = parseInt();
 var nombreUsuario = "Tony Stark";
 var saldoCuenta = 100000;
 var limiteExtraccion = 50000;
@@ -8,8 +8,8 @@ function suma (cantidad) {
     saldoCuenta = cantidad + saldoCuenta;
 }
 
-function resta (cantidadDeDinero) {
-    saldoCuenta = saldoCuenta - cantidadDeDinero;
+function resta (cantidad) {
+    saldoCuenta = saldoCuenta - cantidad;
 }
 
 //Ejecución de las funciones que actualizan los valores de las variables en el HTML.
@@ -21,17 +21,36 @@ window.onload = function() {
 
 //Funciones que tenes que completar
 function cambiarLimiteDeExtraccion() {
-    var montoIngresadoString = prompt("Ingrese el monto a extraer");
+    var montoIngresadoString = prompt("Ingrese nuevo límite de extracción");
     montoIngresadoNumber = parseInt(montoIngresadoString);
     // var saldoAnterior = saldoCuenta + montoIngresadoNumber;
+    var limiteExtraccion = montoIngresadoNumber;
+    actualizarLimiteEnPantalla();
+    alert(limiteExtraccion);
 }
 
-function extraerDinero(cantidadDeDinero) {
-
-    
+function extraerDinero (cantidad) {
+    var montoIngresadoString = prompt("Ingrese el monto a extraer");
+    montoIngresadoNumber = parseInt(montoIngresadoString);
+    var saldoAnterior = saldoCuenta;
+    resta(montoIngresadoNumber);
+    actualizarSaldoEnPantalla()
+    alert("Monto a extraer: $"  + montoIngresadoNumber + "\n" + "Saldo Anterior: $ " + saldoAnterior + "\n" + "Saldo Actual: $ "+ saldoCuenta);
+    // debugger
+    // var montoIngresadoString = prompt("Ingrese el monto a extraer");
+    // debugger
+    // montoIngresadoNumber = parseInt(montoIngresadoString);
+    // debugger
+    // var saldoAnterior = saldoCuenta;
+    // debugger
+    // resta();
+    // // actualizarSaldoEnPantalla();
+    // debugger
+    // alert("Retiraste: $"  + montoIngresadoNumber + "\n" + "Saldo Anterior: $ " + saldoAnterior + "\n" + "Saldo Actual: $ "+ saldoCuenta);
+    // debugger
 }
 
-function depositarDinero(cantidadDeDinero) {
+function depositarDinero(cantidad) {
     var montoIngresadoString = prompt("Ingrese el monto a depositar");
     montoIngresadoNumber = parseInt(montoIngresadoString);
     var saldoAnterior = saldoCuenta;
