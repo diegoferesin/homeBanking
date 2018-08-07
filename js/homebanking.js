@@ -21,10 +21,13 @@ window.onload = function() {
 
 //Funciones que tenes que completar
 function cambiarLimiteDeExtraccion() {
-
+    var montoIngresadoString = prompt("Ingrese el monto a extraer");
+    montoIngresadoNumber = parseInt(montoIngresadoString);
+    // var saldoAnterior = saldoCuenta + montoIngresadoNumber;
 }
 
 function extraerDinero(cantidadDeDinero) {
+
     
 }
 
@@ -34,8 +37,10 @@ function depositarDinero(cantidadDeDinero) {
     var saldoAnterior = saldoCuenta;
     suma(montoIngresadoNumber);
     actualizarSaldoEnPantalla()
-    alert("Depositaste: $  + montoIngresadoNumber\nSaldo Anterior: $ + saldoAnterior \nSaldo Actual: $ + saldoCuenta"
-            );
+    alert("Depositaste: $"  + montoIngresadoNumber + "\n" + "Saldo Anterior: $ " + saldoAnterior + "\n" + "Saldo Actual: $ "+ saldoCuenta);
+    // alert("Depositaste: $" montoIngresadoNumber "\n" "Saldo Anterior: $" saldoAnterior "\n" "Saldo Actual: $" saldoCuenta);
+    // return alert(saldoAnterior);
+    // return alert (saldoCuenta);
 
 }
 
