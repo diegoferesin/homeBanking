@@ -22,9 +22,9 @@ window.onload = function() {
 //Funciones que tenes que completar
 function cambiarLimiteDeExtraccion() {
     var montoIngresadoString = prompt("Ingrese nuevo límite de extracción");
-    montoIngresadoNumber = parseInt(montoIngresadoString);
+    var montoIngresadoNumber = parseInt(montoIngresadoString);
     // var saldoAnterior = saldoCuenta + montoIngresadoNumber;
-    var limiteExtraccion = montoIngresadoNumber;
+    limiteExtraccion = montoIngresadoNumber;
     actualizarLimiteEnPantalla();
     alert(limiteExtraccion);
 }
