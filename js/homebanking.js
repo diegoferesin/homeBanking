@@ -30,20 +30,27 @@ function cambiarLimiteDeExtraccion() {
 }
 
 function extraerDinero (cantidad) {
+    if (limiteExtraccion === 0){
+        alert("Por favor configure su límite de extracción primero");
+        cambiarLimiteDeExtraccion();
+        alert("Gracias por configurar su límite de extracción \nAhora puede extraer dinero");
+    }
     var montoIngresadoString = prompt("Ingrese el monto a extraer");
     montoIngresadoNumber = parseInt(montoIngresadoString);
     var saldoAnterior = saldoCuenta;
     if(montoIngresadoNumber < saldoCuenta){
-        if (montoIngresadoNumber < limiteExtraccion) {
+        if (montoIngresadoNumber <= limiteExtraccion) {
             resta(montoIngresadoNumber);
             actualizarSaldoEnPantalla()
             alert("Monto a extraer: $"  + montoIngresadoNumber + "\n" + "Saldo Anterior: $ " + saldoAnterior + "\n" + "Saldo Actual: $ "+ saldoCuenta);
         }else{
-            alert("La cantidad de dinero que deseas extraer supera tu límite de extracción");
+            alert("La cantidad de dinero que deseas extraer supera tu límite de extracción \nPor favor ingrese un monto inferior a $ " + limiteExtraccion);
+            extraerDinero();
         }
     }else{
         alert("No hay saldo disponible en tu cuenta para extraer esa cantidad de dinero");
-    }
+}
+    
     
     // debugger
     // var montoIngresadoString = prompt("Ingrese el monto a extraer");
