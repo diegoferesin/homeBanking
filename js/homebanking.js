@@ -2,7 +2,7 @@
 // var cantidadDeDinero = parseInt();
 var nombreUsuario = "Tony Stark";
 var saldoCuenta = 100000;
-var limiteExtraccion = 50000;
+var limiteExtraccion = 0;
 
 function suma (cantidad) {
     saldoCuenta = cantidad + saldoCuenta;
@@ -26,16 +26,25 @@ function cambiarLimiteDeExtraccion() {
     // var saldoAnterior = saldoCuenta + montoIngresadoNumber;
     limiteExtraccion = montoIngresadoNumber;
     actualizarLimiteEnPantalla();
-    alert(limiteExtraccion);
+    alert("Su nuevo límite de extracción es de $: " + limiteExtraccion);
 }
 
 function extraerDinero (cantidad) {
     var montoIngresadoString = prompt("Ingrese el monto a extraer");
     montoIngresadoNumber = parseInt(montoIngresadoString);
     var saldoAnterior = saldoCuenta;
-    resta(montoIngresadoNumber);
-    actualizarSaldoEnPantalla()
-    alert("Monto a extraer: $"  + montoIngresadoNumber + "\n" + "Saldo Anterior: $ " + saldoAnterior + "\n" + "Saldo Actual: $ "+ saldoCuenta);
+    if(montoIngresadoNumber < saldoCuenta){
+        if (montoIngresadoNumber < limiteExtraccion) {
+            resta(montoIngresadoNumber);
+            actualizarSaldoEnPantalla()
+            alert("Monto a extraer: $"  + montoIngresadoNumber + "\n" + "Saldo Anterior: $ " + saldoAnterior + "\n" + "Saldo Actual: $ "+ saldoCuenta);
+        }else{
+            alert("La cantidad de dinero que deseas extraer supera tu límite de extracción");
+        }
+    }else{
+        alert("No hay saldo disponible en tu cuenta para extraer esa cantidad de dinero");
+    }
+    
     // debugger
     // var montoIngresadoString = prompt("Ingrese el monto a extraer");
     // debugger
