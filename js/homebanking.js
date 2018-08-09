@@ -29,6 +29,7 @@ function cambiarLimiteDeExtraccion() {
     alert("Su nuevo límite de extracción es de $: " + limiteExtraccion);
 }
 
+// // // // // // // Modularizar la función extraerDinero, es muy larga
 function extraerDinero (cantidad) {
     if (limiteExtraccion === 0){
         alert("Por favor configure su límite de extracción primero");
