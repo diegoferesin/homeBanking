@@ -19,6 +19,16 @@ window.onload = function() {
     actualizarLimiteEnPantalla();
 }
 
+function verificarSaldo (cantidad) {
+    if (cantidad > saldoCuenta) {
+        alert ("No hay suficiente dinero en su cuenta para realizar esta acción");
+        return false;
+    }else{
+        return true;
+    }
+}
+
+
 //Funciones que tenes que completar
 function cambiarLimiteDeExtraccion() {
     var montoIngresadoString = prompt("Ingrese nuevo límite de extracción");
@@ -44,7 +54,7 @@ function extraerDinero (cantidad) {
     //     alert("No hay saldo disponible en tu cuenta para extraer esa cantidad de dinero");
     //     return;
     // }
-
+    
     if(montoIngresadoNumber < saldoCuenta){
         if (montoIngresadoNumber <= limiteExtraccion) {
             if(montoIngresadoNumber % 100 === 0){
@@ -92,7 +102,43 @@ function depositarDinero(cantidad) {
 }
 
 function pagarServicio() {
-
+    var agua = 350;
+    var telefono = 425;
+    var luz = 210;
+    var internet = 570;
+    var saldoAnterior = saldoCuenta;
+    var servicio = prompt ("Ingrese el número que corresponde al servicio que querés pagar\n1 - Agua\n2 - Luz\n3 - Internet\n4 - Teléfono");
+    var number = parseInt(servicio);
+    switch(number) {
+        case 1:
+        if (verificarSaldo(agua) === true) {
+            resta(agua);
+            alert ("Ha pagado el servicio de agua" + "\nEl costo del servicio es de $ " + telefono + "\nSaldo anterior $ " + saldoAnterior + "\nSaldo actual $ " + saldoCuenta);
+        }
+        break;
+        case 2:
+        if (verificarSaldo(telefono) === true) {
+            resta(telefono);
+            alert ("Ha pagado el servicio de teléfono" + "\nEl costo del servicio es de $ " + telefono + "\nSaldo anterior $ " + saldoAnterior + "\nSaldo actual $ " + saldoCuenta);
+        }
+        break;
+        case 3:
+        if (verificarSaldo(luz) === true) {
+            resta(luz);
+            alert ("Ha pagado el servicio de luz" + "\nEl costo del servicio es de $ " + luz + "\nSaldo anterior $ " + saldoAnterior + "\nSaldo actual $ " + saldoCuenta);
+        }
+        break;
+        case 4:
+        if (verificarSaldo(internet) === true) {
+            resta(internet);
+            alert ("Ha pagado el servicio de internet" + "\nEl costo del servicio es de $ " + luz + "\nSaldo anterior $ " + saldoAnterior + "\nEl costo del servicio es de $ " + internet + "\nSaldo actual $ " + saldoCuenta);
+        }
+        break;
+        default:
+        alert("El valor ingresado no coincide con ningún servicio asociado, por favor vuelva a elegir el servicio")
+        break;
+    }
+    actualizarSaldoEnPantalla();
 }
 
 function transferirDinero() {
