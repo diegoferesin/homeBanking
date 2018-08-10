@@ -141,8 +141,38 @@ function pagarServicio() {
     actualizarSaldoEnPantalla();
 }
 
-function transferirDinero() {
+function verificarQueCuenta (dato) {
+    if (dato === cuentaAmiga1) {
+        resta ()
+    }else if(dato === cuentaAmiga2){
+        resta();
+    }else{
+        alert("Solo puede transferir dinero a una cuenta amiga");
+        return false;
+    }
+}
 
+function transferirDinero() {
+    var cuentaAmiga1 = 1234567;
+    var cuentaAmiga2 = 7654321;
+    var montoIngresadoString = prompt ("Ingrese el monto que desea transferir");
+    var montoIngresadoNumber = parseInt(montoIngresadoString);
+    
+    if (verificarSaldo(montoIngresadoNumber) === true) {
+        var numeroDeCuentaString = prompt("Por favor ingrese el número de cuenta al que desea hacer la transferencia");
+        var numeroDeCuentaNumber = parseInt(numeroDeCuentaString);
+        verificarQueCuenta (numeroDeCuentaNumber);
+        if (dato === cuentaAmiga1) {
+            resta (montoIngresadoNumber)
+        }else if(dato === cuentaAmiga2){
+            var saldoAnterior = saldoCuenta;
+            resta(montoIngresadoNumber);
+            alert()
+        }else{
+            alert("Solo puede transferir dinero a una cuenta amiga");
+            return false;
+        }
+    }
 }
 
 function iniciarSesion() {
