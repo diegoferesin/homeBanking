@@ -72,8 +72,7 @@ function extraerDinero (cantidad) {
     }else{
         alert("No hay saldo disponible en tu cuenta para extraer esa cantidad de dinero");
 }
-    
-    
+
     // debugger
     // var montoIngresadoString = prompt("Ingrese el monto a extraer");
     // debugger
@@ -86,6 +85,7 @@ function extraerDinero (cantidad) {
     // debugger
     // alert("Retiraste: $"  + montoIngresadoNumber + "\n" + "Saldo Anterior: $ " + saldoAnterior + "\n" + "Saldo Actual: $ "+ saldoCuenta);
     // debugger
+
 }
 
 function depositarDinero(cantidad) {
@@ -98,7 +98,6 @@ function depositarDinero(cantidad) {
     // alert("Depositaste: $" montoIngresadoNumber "\n" "Saldo Anterior: $" saldoAnterior "\n" "Saldo Actual: $" saldoCuenta);
     // return alert(saldoAnterior);
     // return alert (saldoCuenta);
-
 }
 
 function pagarServicio() {
@@ -131,7 +130,7 @@ function pagarServicio() {
         case 4:
         if (verificarSaldo(internet) === true) {
             resta(internet);
-            alert ("Ha pagado el servicio de internet" + "\nEl costo del servicio es de $ " + luz + "\nSaldo anterior $ " + saldoAnterior + "\nEl costo del servicio es de $ " + internet + "\nSaldo actual $ " + saldoCuenta);
+            alert ("Ha pagado el servicio de internet" + "\nEl costo del servicio es de $ " + luz + "\nSaldo anterior $ " + saldoAnterior + "\nSaldo actual $ " + saldoCuenta);
         }
         break;
         default:
@@ -141,16 +140,16 @@ function pagarServicio() {
     actualizarSaldoEnPantalla();
 }
 
-function verificarQueCuenta (dato) {
-    if (dato === cuentaAmiga1) {
-        resta ()
-    }else if(dato === cuentaAmiga2){
-        resta();
-    }else{
-        alert("Solo puede transferir dinero a una cuenta amiga");
-        return false;
-    }
-}
+// function verificarQueCuenta (dato) {
+//     if (dato === cuentaAmiga1) {
+//         resta ()
+//     }else if(dato === cuentaAmiga2){
+//         resta();
+//     }else{
+//         alert("Solo puede transferir dinero a una cuenta amiga");
+//         return false;
+//     }
+// }
 
 function transferirDinero() {
     var cuentaAmiga1 = 1234567;
@@ -161,18 +160,19 @@ function transferirDinero() {
     if (verificarSaldo(montoIngresadoNumber) === true) {
         var numeroDeCuentaString = prompt("Por favor ingrese el número de cuenta al que desea hacer la transferencia");
         var numeroDeCuentaNumber = parseInt(numeroDeCuentaString);
-        verificarQueCuenta (numeroDeCuentaNumber);
-        if (dato === cuentaAmiga1) {
-            resta (montoIngresadoNumber)
-        }else if(dato === cuentaAmiga2){
-            var saldoAnterior = saldoCuenta;
+        // verificarQueCuenta (numeroDeCuentaNumber);
+
+        if (numeroDeCuentaNumber === cuentaAmiga1) {
+            resta (montoIngresadoNumber);
+        }else if(numeroDeCuentaNumber === cuentaAmiga2){
             resta(montoIngresadoNumber);
-            alert()
         }else{
             alert("Solo puede transferir dinero a una cuenta amiga");
             return false;
         }
-    }
+        actualizarSaldoEnPantalla();
+        alert("Se han transferido $ " + montoIngresadoNumber + "\nCuenta destino: " + numeroDeCuentaNumber + "\nSu saldo actual es de: $" + saldoCuenta);
+    }    
 }
 
 function iniciarSesion() {
