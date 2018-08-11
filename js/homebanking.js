@@ -14,6 +14,7 @@ function resta (cantidad) {
 
 //Ejecución de las funciones que actualizan los valores de las variables en el HTML.
 window.onload = function() {
+    iniciarSesion ();
     cargarNombreEnPantalla();
     actualizarSaldoEnPantalla();
     actualizarLimiteEnPantalla();
@@ -158,7 +159,7 @@ function transferirDinero() {
     var montoIngresadoNumber = parseInt(montoIngresadoString);
     
     if (verificarSaldo(montoIngresadoNumber) === true) {
-        var numeroDeCuentaString = prompt("Por favor ingrese el número de cuenta al que desea hacer la transferencia");
+        var numeroDeCuentaString = prompt("Por favor ingrese el número de cuenta al que desea hacer la transferencia" + "\nCuenta Amiga 1: 1234567" + "\nCuenta Amiga 2: 7654321");
         var numeroDeCuentaNumber = parseInt(numeroDeCuentaString);
         // verificarQueCuenta (numeroDeCuentaNumber);
         // alert("Selección a qué cuenta amiga desea transferir dinero" + "\n1 - Cuenta Amiga 1 Nº de cuenta: 1234567" + "\n2 - Cuenta Amiga 2 Nº de cuenta: 7654321");
@@ -177,7 +178,16 @@ function transferirDinero() {
 }
 
 function iniciarSesion() {
-
+    var codigoDeSeguridad = 1234;
+    var pedirCodigo = prompt("Antes de iniciar, ingrese su código de ingreso" + "\nUna pista, el código es: 1234");
+    var codigo =  parseInt(pedirCodigo);
+    if (codigoDeSeguridad === codigo){
+        alert("Bienvenido Tony Stark, ya puede comenzar a operar con Banco Acámica" + "\nGracias por confiar en nosotros");
+    }else{
+        alert("Código incorrecto. Tu dinero ha sido retenido por cuestiones de seguridad" + "\nPor favor ingrese nuevamente el código");
+        saldoCuenta = 0;
+        iniciarSesion();
+    }
 }
 
 //Funciones que actualizan el valor de las variables en el HTML
