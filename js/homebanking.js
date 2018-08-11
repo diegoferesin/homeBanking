@@ -161,6 +161,7 @@ function transferirDinero() {
         var numeroDeCuentaString = prompt("Por favor ingrese el número de cuenta al que desea hacer la transferencia");
         var numeroDeCuentaNumber = parseInt(numeroDeCuentaString);
         // verificarQueCuenta (numeroDeCuentaNumber);
+        // alert("Selección a qué cuenta amiga desea transferir dinero" + "\n1 - Cuenta Amiga 1 Nº de cuenta: 1234567" + "\n2 - Cuenta Amiga 2 Nº de cuenta: 7654321");
 
         if (numeroDeCuentaNumber === cuentaAmiga1) {
             resta (montoIngresadoNumber);
