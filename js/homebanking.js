@@ -113,7 +113,7 @@ function pagarServicio() {
         case 1:
         if (verificarSaldo(agua) === true) {
             resta(agua);
-            alert ("Ha pagado el servicio de agua" + "\nEl costo del servicio es de $ " + telefono + "\nSaldo anterior $ " + saldoAnterior + "\nSaldo actual $ " + saldoCuenta);
+            alert ("Ha pagado el servicio de agua" + "\nEl costo del servicio es de $ " + agua + "\nSaldo anterior $ " + saldoAnterior + "\nSaldo actual $ " + saldoCuenta);
         }
         break;
         case 2:
@@ -131,7 +131,7 @@ function pagarServicio() {
         case 4:
         if (verificarSaldo(internet) === true) {
             resta(internet);
-            alert ("Ha pagado el servicio de internet" + "\nEl costo del servicio es de $ " + luz + "\nSaldo anterior $ " + saldoAnterior + "\nSaldo actual $ " + saldoCuenta);
+            alert ("Ha pagado el servicio de internet" + "\nEl costo del servicio es de $ " + internet + "\nSaldo anterior $ " + saldoAnterior + "\nSaldo actual $ " + saldoCuenta);
         }
         break;
         default:
